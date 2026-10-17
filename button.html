@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+      <title>变色按钮</title>
+      <style>
+        #myBtn {
+          background-colour: black;
+          color: white;
+          font-size: 48px;
+          padding: 20px 40px;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          }
+        </style>
+        <body>
+        <button id="myBtn">TOUCHME</button>
+        <script>
+        var btn =document.getElementById("myBtn")
+       btn.onclick =function()   {
+         if(btn.style.backgroundColor==="black")
+       btn.style.backgroundColor="white";
+         btn.style.color="black"
+         }else{
+          btn.style.backgroundColor="black"
+         btn.style.color  ="white"
+         }
+          };
+        </script>
+        </body></html>
