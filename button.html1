@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>变色按钮</title>
+  <style>
+    #myBtn {
+      background-color: black;
+      color: white;
+      font-size: 24px;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="myBtn">点我</button>
+
+  <script>
+    var btn = document.getElementById("myBtn");
+    btn.onclick = function() {
+      if (btn.style.backgroundColor === "black") {
+        btn.style.backgroundColor = "white";
+        btn.style.color = "black";
+      } else {
+        btn.style.backgroundColor = "black";
+        btn.style.color = "white";
+      }
+    };
+  </script>
+</body>
+</html>
