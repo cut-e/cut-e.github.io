@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>点箱子蹦爱心</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;background:#111;overflow:hidden;}
+#box{font-size:90px;cursor:pointer;user-select:none;transition:transform .1s;}
+#box:active{transform:scale(.85);}
+.heart{position:fixed;font-size:30px;pointer-events:none;animation:fly 3s ease-out forwards;}
+@keyframes fly{0%{opacity:1;transform:translate(0,0) scale(.6);}66%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.3);}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.3);}}
+</style>
+</head>
+<body>
+<div id="box">📦</div>
+<script>
+var box=document.getElementById("box");
+box.addEventListener("click",function(e){
+for(var i=0;i<3;i++){
+var h=document.createElement("div");
+h.className="heart";
+h.textContent="❤️";
+var angle=Math.random()*Math.PI*2;
+var dist=120+Math.random()*100;
+var dx=Math.cos(angle)*dist;
+var dy=Math.sin(angle)*dist;
+h.style.setProperty("--dx",dx+"px");
+h.style.setProperty("--dy",dy+"px");
+h.style.left=e.clientX+"px";
+h.style.top=e.clientY+"px";
+document.body.appendChild(h);
+setTimeout(function(){h.remove();},3000);
+}
+});
+</script>
+</body>
+</html>
